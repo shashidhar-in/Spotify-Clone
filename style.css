@@ -179,11 +179,17 @@ nav ul li{
     .volumeRocker{
         visibility: hidden;
     }
+    #playListName{
+        color: rgb(0, 0, 0);
+    }
     .container{
         background-color: transparent;
         padding: 15px;
-
     }
+    .songItemContainer{
+        margin-top: 10px;
+    }
+
     
 } 
 

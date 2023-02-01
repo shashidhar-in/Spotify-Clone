@@ -46,7 +46,6 @@ nav ul li{
     font-family: 'Varela Round', sans-serif;
     display: flex;
     justify-content: center;
-    width: auto;
     margin: 23px auto;
     border-radius: 12px;
     padding: 34px;
@@ -103,7 +102,7 @@ nav ul li{
     margin-top: 50px;
 }
 .songItem{
-    height: 50px;
+   min-height: 50px;
     display: flex;
     background-color: whitesmoke;
     color: black;
@@ -120,10 +119,6 @@ nav ul li{
     width: 43px;
     margin: 0 23px;
     border-radius: 34px;
-}
-.songItem:hover{
-    cursor: pointer;
-    
 }
 
 
@@ -186,7 +181,10 @@ nav ul li{
     }
     .container{
         background-color: transparent;
+        padding: 15px;
+
     }
+    
 } 
 
 .icons{

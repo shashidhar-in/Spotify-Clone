@@ -16,7 +16,7 @@ nav{
 nav ul{
     display: flex;
     list-style-type: none;
-    height: max-content;
+    height: 4rem;
     background-color: black;
     color: whitesmoke;
     align-items: center;
@@ -40,7 +40,7 @@ nav ul li{
 }
 .container{
     min-height: 65vh;
-    max-width: 80vh;
+    max-width: max-content;
     background-color: black;
     color: whitesmoke;
     font-family: 'Varela Round', sans-serif;
@@ -112,12 +112,8 @@ nav ul li{
     justify-content: flex-start;
     align-items: center;
     border-radius: 5px;
-    white-space: inherit;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.songItem:hover{
-    overflow: visible;
+    cursor: pointer;
+    
 }
 
 .songItem img{
@@ -125,14 +121,11 @@ nav ul li{
     margin: 0 23px;
     border-radius: 34px;
 }
-
-.timestamp{
-    margin: 0 23px;
-}
-
-.timestamp i{
+.songItem:hover{
     cursor: pointer;
+    
 }
+
 
 .songInfo{
     display: flex;
@@ -146,7 +139,6 @@ nav ul li{
     border-radius: 2px;
     width: 250px;
     height: 60px;
-  
 
 }
 .songInfo img{
@@ -157,6 +149,7 @@ nav ul li{
 .songInfo div{
     display: flex;
     flex-direction: column;
+   
 }
 #masterSongName{
     max-width: 150px;
@@ -191,15 +184,11 @@ nav ul li{
     .volumeRocker{
         visibility: hidden;
     }
-} 
-@media screen and (max-width:500px) {
-    .songInfo{
-        visibility: hidden;
-    }
-    .volumeRocker{
-        visibility: hidden;
+    .container{
+        background-color: transparent;
     }
 } 
+
 .icons{
     display: flex;
     align-items: center;

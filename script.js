@@ -141,12 +141,12 @@ Mute.addEventListener("click", () => {
 const makeAllPlays = () => {
   Array.from(document.getElementsByClassName("songItem")).forEach(
     (element) => {
-      element.style["border"]="none";
+      element.style["border"] = "none";
     }
   );
 };
-const makePlaying=(songIndex)=>{
-  document.getElementById(songIndex).style["border"]="5px solid #16a349";
+const makePlaying = (songIndex) => {
+  document.getElementById(songIndex).style["border"] = "5px solid #16a349";
 }
 makePlaying(0);
 Array.from(document.getElementsByClassName("songItem")).forEach(
@@ -164,7 +164,7 @@ Array.from(document.getElementsByClassName("songItem")).forEach(
       makePlaying(e.target.id);
       masterPlay.classList.remove("fa-circle-play");
       masterPlay.classList.add("fa-circle-pause");
-     
+
     });
   }
 );
@@ -186,7 +186,7 @@ document.getElementById("next").addEventListener("click", () => {
   masterPlay.classList.add("fa-circle-pause");
 
   makePlaying(songIndex);
-  
+
 
 });
 document.getElementById("previous").addEventListener("click", () => {

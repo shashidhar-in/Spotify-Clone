@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #device-list {
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+
+        .device {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Audio Output Devices</h1>
+    <div id="device-list">
+        <!-- Devices will be added here -->
+    </div>
+</body>
+<script>
+    const deviceList = document.querySelector('#device-list');
+
+    // Check if the API is available
+    if (typeof navigator.mediaDevices === 'undefined' ||
+        typeof navigator.mediaDevices.enumerateDevices === 'undefined') {
+        deviceList.innerHTML = '<p>WebRTC API is not available in your browser.</p>';
+        return;
+    }
+
+    // Get the audio output devices
+    navigator.mediaDevices.enumerateDevices()
+        .then(devices => {
+            devices = devices.filter(device => device.kind === 'audiooutput');
+            if (devices.length === 0) {
+                deviceList.innerHTML = '<p>No audio output devices found.</p>';
+                return;
+            }
+
+            // Add each device to the list
+            devices.forEach(device => {
+                const deviceDiv = document.createElement('div');
+                deviceDiv.classList.add('device');
+                deviceDiv.innerHTML = device.label;
+                deviceList.appendChild(deviceDiv);
+            });
+        })
+        .catch(error => {
+            deviceList.innerHTML = `<p>An error occurred: ${error.message}</p>`;
+        });
+</script>
+
+</html>
